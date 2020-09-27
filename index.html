@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.5.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Audiowide&family=Bangers&family=Codystar&family=Ewert&family=Finger+Paint&family=Gaegu&family=Limelight&family=Lobster&family=Meddon&family=Monoton&family=MuseoModerno&family=Patrick+Hand&family=Righteous&family=Sarina&family=Shojumaru&family=Spirax&family=Unkempt&family=Zilla+Slab+Highlight&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <title>Fun with Fonts</title>
+</head>
+<body>
+  <header>
+    <h1>Fun with Fonts!</h1>
+    <h2>Why stick with Arial or Helvetica?</h2>
+  </header>
+  <textarea name="text" placeholder="Type some sample text" id="text" cols="30" rows="10"></textarea>
+  <div class="form">
+    <form method="POST">
+        <p>Choose a font*</p>
+        <div class="custom-select">
+          <select name="font" id="font">
+            <option value="Amatic SC" id="Amatic SC">Amatic SC</option>
+            <option value="Audiowide" id="Audiowide">Audiowide</option>
+            <option value="Bangers" id="Bangers">Bangers</option>
+            <option value="Codystar" id="Codystar">Codystar</option>
+            <option value="Ewert" id="Ewert">Ewert</option>
+            <option value="Finger Paint" id="Finger Paint">Finger Paint</option>
+            <option value="Gaegu" id="Gaegu">Gaegu</option>
+            <option value="Limelight" id="Limelight">Limelight</option>
+            <option value="Lobster" id="Lobster">Lobster</option>
+            <option value="Meddon" id="Meddon">Meddon</option>
+            <option value="Monoton" id="Monoton">Monoton</option>
+            <option value="MuseoModerno" id="MuseoModerno">MuseoModerno</option>
+            <option value="Patrick Hand" id="Patrick Hand">Patrick Hand</option>
+            <option value="Righteous" id="Righteous">Righteous</option>
+            <option value="Sarina" id="Sarina">Sarina</option>
+            <option value="Shojumaru" id="Shojumaru">Shojumaru</option>
+            <option value="Spirax" id="Spirax">Spirax</option>
+            <option value="Unkempt" id="Unkempt">Unkempt</option>
+            <option value="Zilla Slab Highlight" id="Zilla Slab Highlight">Zilla Slab Highlight</option>
+          </select>
+        </div>
+        <p>Bolder or lighter?</p>
+        <div class="custom-select">
+          <select name="weight" id="weight">
+          <option value="normal">Normal</option>
+          <option value="bold">Bold</option>
+          <option value="bolder">Bolder</option>
+          <option value="lighter">lighter</option>
+        </select>
+        </div>
+    </form>
+  </div>
+  <div class="preview">Here's your sample text</div>
+  <footer>
+    <p>*Find more fonts at <a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a>
+    </p>
+  </footer>
+  <script>
+  $(document).ready(() => {
+      $('#text').on('keyup', event => {
+        $('.preview').html($(event.currentTarget).val());
+      });
+      $('#font').on('change', event => {
+        $('.preview').css('font-family', $(event.currentTarget).val());
+      });
+      $('#weight').on('change', event => {
+        $('.preview').css('font-weight', $(event.currentTarget).val());
+      });
+    })
+  </script>
+</body>
+</html>
