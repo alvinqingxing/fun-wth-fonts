@@ -1,1 +1,1 @@
-A [font exploration app](https://fontasy.netlify.app/) written in jQuery
+A font exploration app written in jQuery
